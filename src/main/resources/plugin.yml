@@ -1,0 +1,19 @@
+name: LW-SimpleVanish
+version: RELEASE 1.0
+author: LvckyAPI
+prefix: LW-SimpleVanish
+main: net.lvckyapi.simplevanish.SimpleVanish
+
+commands:
+  vanish:
+    description: Change the Visibelity of a Player / Ändert Sichtbarkeit eines Spielers
+    usage: /v | /v [NAME]
+    aliases:
+      - v
+      - sv
+      - lwsv
+      - lw-sv
+      - lwv
+      - lw-v
+    quit:
+      description: Quit the Server / Verlässt den Server
