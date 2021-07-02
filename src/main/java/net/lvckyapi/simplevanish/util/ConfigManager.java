@@ -22,9 +22,13 @@ public class ConfigManager {
         return YamlConfiguration.loadConfiguration(getFile());
     }
 
+    public static void startUp() {
+        loadConfig();
+    }
     private static void loadConfig() {
         if (!getFile().exists()) {
             FileConfiguration cfg = getConfiguration();
+            cfg.set("POSSIBLE LANGUAGES (MÖGLICHE SPRACHEN)", "de, eng");
             cfg.set("language", "de");
             try {
                 cfg.save(getFile());
@@ -34,4 +38,5 @@ public class ConfigManager {
             /* Laden der Configuration für Commands */
         }
     }
+
 }

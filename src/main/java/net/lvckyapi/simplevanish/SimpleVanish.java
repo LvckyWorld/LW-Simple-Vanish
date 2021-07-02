@@ -3,6 +3,7 @@ package net.lvckyapi.simplevanish;
 import net.lvckyapi.simplevanish.commands.QuitCommand;
 import net.lvckyapi.simplevanish.commands.VanishCommad;
 import net.lvckyapi.simplevanish.listener.MainListener;
+import net.lvckyapi.simplevanish.util.ConfigManager;
 import net.lvckyapi.simplevanish.util.Utility;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -18,6 +19,7 @@ public class SimpleVanish extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        ConfigManager.startUp();
         Bukkit.broadcastMessage(Utility.getPrefix() + "§ePlugin wurde erfolgreich aktiviert!");
         getCommand("vanish").setExecutor(new VanishCommad());
         getCommand("quit").setExecutor(new QuitCommand());
