@@ -21,7 +21,7 @@ public class VanishCommad implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             Player p = (Player) sender;
-            if (!p.hasPermission("sv.use")) {
+            if (p.hasPermission("sv.use")) {
                 if (args.length == 0) {
                     if (VanishManager.isVanished(p)) {
                         VanishManager.removeVanish(p);

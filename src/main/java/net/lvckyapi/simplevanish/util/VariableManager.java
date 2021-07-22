@@ -36,11 +36,6 @@ public class VariableManager {
     }
     @NotNull
     public static String cmdArgError(String label) {
-        if (german() && english()) {
-            return Utility.getPrefix() + "§4CRITICAL LANGUAGE CONFIG ERROR / KRITISCHER SPRACHKONIGURATIONS FEHLER";
-        } else if (!(german() && english())) {
-            return Utility.getPrefix() + "§4CRITICAL LANGUAGE CONFIG ERROR / KRITISCHER SPRACHKONIGURATIONS FEHLER";
-        }
         if (german()) {
             return Utility.getPrefix() + "§7Mache §e" + label + " §7 oder §e/" + label + " [NAME]§7!";
         }
@@ -51,11 +46,6 @@ public class VariableManager {
     }
     @NotNull
     public static String nowNoLonerVanish() {
-        if (german() && english()) {
-            return Utility.getPrefix() + "§4CRITICAL LANGUAGE CONFIG ERROR / KRITISCHER SPRACHKONIGURATIONS FEHLER";
-        } else if (!(german() && english())) {
-            return Utility.getPrefix() + "§4CRITICAL LANGUAGE CONFIG ERROR / KRITISCHER SPRACHKONIGURATIONS FEHLER";
-        }
         if (german()) {
             return Utility.getPrefix() + "§7Du bist nun§c nicht mehr§7 Vanish.";
         }
@@ -66,11 +56,6 @@ public class VariableManager {
     }
     @NotNull
     public static String permsError(String permsThatAreRequired) {
-        if (german() && english()) {
-            return Utility.getPrefix() + "§4CRITICAL LANGUAGE CONFIG ERROR / KRITISCHER SPRACHKONIGURATIONS FEHLER";
-        } else if (!(german() && english())) {
-            return Utility.getPrefix() + "§4CRITICAL LANGUAGE CONFIG ERROR / KRITISCHER SPRACHKONIGURATIONS FEHLER";
-        }
         if (german()) {
             return Utility.getPrefix() + "§7Dazu hast du keine Rechte, dir fehlt§e " + permsThatAreRequired;
         }
@@ -81,11 +66,6 @@ public class VariableManager {
     }
     @NotNull
     public static String nowInVanish() {
-        if (german() && english()) {
-            return Utility.getPrefix() + "§4CRITICAL LANGUAGE CONFIG ERROR / KRITISCHER SPRACHKONIGURATIONS FEHLER";
-        } else if (!(german() && english())) {
-            return Utility.getPrefix() + "§4CRITICAL LANGUAGE CONFIG ERROR / KRITISCHER SPRACHKONIGURATIONS FEHLER";
-        }
         if (german()) {
             return Utility.getPrefix() + "§7Du bist nun §a im §7 Vanish.";
         }
@@ -97,11 +77,6 @@ public class VariableManager {
 
     @NotNull
     public static String playerNotOnline(String player) {
-        if (german() && english()) {
-            return Utility.getPrefix() + "§4CRITICAL LANGUAGE CONFIG ERROR / KRITISCHER SPRACHKONIGURATIONS FEHLER";
-        } else if (!(german() && english())) {
-            return Utility.getPrefix() + "§4CRITICAL LANGUAGE CONFIG ERROR / KRITISCHER SPRACHKONIGURATIONS FEHLER";
-        }
         if (german()) {
             return Utility.getPrefix() + "§cDer Spieler §e" + player +  "§c ist nicht online.";
         }
@@ -113,11 +88,6 @@ public class VariableManager {
 
     @NotNull
     public static String unVanishOthers(Player t) {
-        if (german() && english()) {
-            return Utility.getPrefix() + "§4CRITICAL LANGUAGE CONFIG ERROR / KRITISCHER SPRACHKONIGURATIONS FEHLER";
-        } else if (!(german() && english())) {
-            return Utility.getPrefix() + "§4CRITICAL LANGUAGE CONFIG ERROR / KRITISCHER SPRACHKONIGURATIONS FEHLER";
-        }
         if (german()) {
             return Utility.getPrefix() + "§e" + t.getName() + "§7 ist nun§c nicht mehr§7 im Vanish.";
         }
@@ -129,11 +99,6 @@ public class VariableManager {
 
     @NotNull
     public static String vanishOthers(Player t) {
-        if (german() && english()) {
-            return Utility.getPrefix() + "§4CRITICAL LANGUAGE CONFIG ERROR / KRITISCHER SPRACHKONIGURATIONS FEHLER";
-        } else if (!(german() && english())) {
-            return Utility.getPrefix() + "§4CRITICAL LANGUAGE CONFIG ERROR / KRITISCHER SPRACHKONIGURATIONS FEHLER";
-        }
         if (german()) {
             return Utility.getPrefix() + "§e" + t.getName() + "§7 ist nun§a im§7 Vanish.";
         }

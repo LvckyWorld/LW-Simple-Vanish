@@ -5,9 +5,10 @@ prefix: LW-SimpleVanish
 main: net.lvckyapi.simplevanish.SimpleVanish
 
 commands:
+  quit:
+    description: Quit the Server / Verlässt den Server
   vanish:
     description: Change the Visibelity of a Player / Ändert Sichtbarkeit eines Spielers
-    usage: /v | /v [NAME]
     aliases:
       - v
       - sv
@@ -15,5 +16,3 @@ commands:
       - lw-sv
       - lwv
       - lw-v
-    quit:
-      description: Quit the Server / Verlässt den Server
