@@ -25,7 +25,7 @@ language: de
 
 Download: [Klicke hier](https://www.spigotmc.org/resources/lw-simplevanish-multi-langauge.94548/)
 
-Informationsvideo zum Plugin: [Klicke hier](LINK KOMMT NOCH)
+Informationsvideo zum Plugin: [Klicke hier](https://youtu.be/SbNyzPjzbpgH)
 
 # Viel Spaß wünschen
 ## LvckyAPI & IloveKOHL | Developer
