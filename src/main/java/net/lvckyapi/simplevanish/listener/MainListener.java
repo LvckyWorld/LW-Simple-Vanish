@@ -2,6 +2,7 @@ package net.lvckyapi.simplevanish.listener;
 
 import net.lvckyapi.simplevanish.util.Utility;
 import net.lvckyapi.simplevanish.util.VanishManager;
+import net.lvckyapi.simplevanish.util.VariableManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -23,12 +24,14 @@ public class MainListener implements Listener {
     public void onJoin(PlayerJoinEvent e) {
         if (VanishManager.vanishedPlayers.contains(e.getPlayer().getName())) {
             e.setJoinMessage(null);
-            e.getPlayer().sendMessage(Utility.getPrefix() + "§7Du bis§a im§7 Vanish");
+            e.getPlayer().sendMessage(VariableManager.nowInVanish());
         }
         Bukkit.getOnlinePlayers().forEach(all -> {
             VanishManager.vanishedPlayers.forEach(vPs -> {
                 Player x = Bukkit.getPlayer(vPs);
-                all.hidePlayer(x);
+                if (!all.hasPermission("sv.seeothers")) {
+                    all.hidePlayer(x);
+                }
             });
         });
     }
@@ -41,7 +44,9 @@ public class MainListener implements Listener {
         Bukkit.getOnlinePlayers().forEach(all -> {
             VanishManager.vanishedPlayers.forEach(vPs -> {
                 Player x = Bukkit.getPlayer(vPs);
-                all.hidePlayer(x);
+                if (!all.hasPermission("sv.seeothers")) {
+                    all.hidePlayer(x);
+                }
             });
         });
 

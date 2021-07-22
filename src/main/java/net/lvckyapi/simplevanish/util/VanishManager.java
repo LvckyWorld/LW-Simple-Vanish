@@ -19,7 +19,11 @@ public class VanishManager {
     public static void setVanish(Player p) {
         if (!vanishedPlayers.contains(p.getName())) {
             vanishedPlayers.add(p.getName());
-            Bukkit.getOnlinePlayers().forEach(all -> all.hidePlayer(p));
+            Bukkit.getOnlinePlayers().forEach(all -> {
+                if (!all.hasPermission("sv.seeothers")) {
+                    all.hidePlayer(p);
+                }
+            });
         }
     }
     public static void removeVanish(Player p) {
