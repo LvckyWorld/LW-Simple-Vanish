@@ -23,6 +23,8 @@ POSSIBLE LANGUAGES (MÖGLICHE SPRACHEN): de, eng
 language: de
 ```
 
+Download: [Klicke hier](https://www.spigotmc.org/resources/lw-simplevanish-multi-langauge.94548/)
+
 Informationsvideo zum Plugin: [Klicke hier](LINK KOMMT NOCH)
 
 # Viel Spaß wünschen
