@@ -1,7 +1,7 @@
 # LW-Simple-Vanish
 Das LW Simple Vanish Plugin ist ein Simples Vanish System womit man sich vor anderen Spielern verstecken kann.
 
-Sobalt die Permissions eingestellt sind ist es so programmiert das andere Spieler nicht merken das sie online sind.
+Sobald die Permissions eingestellt sind ist es so programmiert das andere Spieler nicht merken das sie online sind.
 
 ## Befehle
 
