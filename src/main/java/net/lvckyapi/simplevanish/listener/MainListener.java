@@ -25,6 +25,8 @@ public class MainListener implements Listener {
         if (VanishManager.vanishedPlayers.contains(e.getPlayer().getName())) {
             e.setJoinMessage(null);
             e.getPlayer().sendMessage(VariableManager.nowInVanish());
+        } else {
+            e.setJoinMessage("§6" + e.getPlayer().getName() + " ist auf den Server gejoint!");
         }
         Bukkit.getOnlinePlayers().forEach(all -> {
             VanishManager.vanishedPlayers.forEach(vPs -> {
@@ -40,6 +42,8 @@ public class MainListener implements Listener {
     public void onPlayerQuit(PlayerQuitEvent e) {
         if (VanishManager.vanishedPlayers.contains(e.getPlayer().getName())) {
             e.setQuitMessage(null);
+        } else {
+            e.setQuitMessage("§6" + e.getPlayer().getName() + " ist vom Server gegangen!");
         }
         Bukkit.getOnlinePlayers().forEach(all -> {
             VanishManager.vanishedPlayers.forEach(vPs -> {
@@ -58,22 +62,24 @@ public class MainListener implements Listener {
     @EventHandler
     public void onChat(AsyncPlayerChatEvent e) {
         Player p = e.getPlayer();
-        if (e.getMessage().equalsIgnoreCase("allow chat")) {
-            if (p.hasPermission("sv.chat")) {
-                if (!Utility.aPC.contains(p.getName())) {
-                    e.setCancelled(true);
-                    p.sendMessage(Utility.getPrefix() + "§7 Du kannst nun §aim Chat schreiben.");
-                    Utility.aPC.add(p.getName());
-                } else {
-                    e.setCancelled(true);
-                    p.sendMessage(Utility.getPrefix() + "§7Du kannst bereits schreiben.");
+        if(VanishManager.isVanished(p)) {
+            if (e.getMessage().equalsIgnoreCase("allow chat")) {
+                if (p.hasPermission("sv.chat")) {
+                    if (!Utility.aPC.contains(p.getName())) {
+                        e.setCancelled(true);
+                        p.sendMessage(Utility.getPrefix() + "§7 Du kannst nun §aim Chat schreiben.");
+                        Utility.aPC.add(p.getName());
+                    } else {
+                        e.setCancelled(true);
+                        p.sendMessage(Utility.getPrefix() + "§7Du kannst bereits schreiben.");
+                    }
                 }
             }
-        }
-        if (!Utility.aPC.contains(p.getName())) {
-            e.setCancelled(true);
-            p.sendMessage(Utility.getPrefix() + "§7Aktuell bist du im Vanish. Um nicht aufzufallen wurde deine Chatnachricht abgebrochen.");
-            p.sendMessage(Utility.getPrefix() + "§7Solltest du dennoch nachrichten schreiben wollen, schreibe§e 'allow chat'§7!");
+            if (!Utility.aPC.contains(p.getName())) {
+                e.setCancelled(true);
+                p.sendMessage(Utility.getPrefix() + "§7Aktuell bist du im Vanish. Um nicht aufzufallen wurde deine Chatnachricht abgebrochen.");
+                p.sendMessage(Utility.getPrefix() + "§7Solltest du dennoch nachrichten schreiben wollen, schreibe§e 'allow chat'§7!");
+            }
         }
     }
 }

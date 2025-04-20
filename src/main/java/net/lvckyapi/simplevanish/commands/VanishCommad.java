@@ -1,6 +1,5 @@
 package net.lvckyapi.simplevanish.commands;
 
-import net.lvckyapi.simplevanish.util.Utility;
 import net.lvckyapi.simplevanish.util.VanishManager;
 import net.lvckyapi.simplevanish.util.VariableManager;
 import org.bukkit.Bukkit;
@@ -24,9 +23,11 @@ public class VanishCommad implements CommandExecutor {
             if (p.hasPermission("sv.use")) {
                 if (args.length == 0) {
                     if (VanishManager.isVanished(p)) {
+                        Bukkit.broadcastMessage("§6" + p.getPlayer().getName() + " ist auf den Server gejoint!");
                         VanishManager.removeVanish(p);
                         p.sendMessage(VariableManager.nowNoLonerVanish());
                     } else {
+                        Bukkit.broadcastMessage("§6" + p.getPlayer().getName() + " ist vom Server gegangen!");
                         VanishManager.setVanish(p);
                         p.sendMessage(VariableManager.nowInVanish());
                     }

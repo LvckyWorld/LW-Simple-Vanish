@@ -1,6 +1,5 @@
 package net.lvckyapi.simplevanish.util;
 
-import com.avaje.ebean.validation.NotNull;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -23,18 +22,12 @@ public class VariableManager {
         return YamlConfiguration.loadConfiguration(getFile());
     }
     private static Boolean german() {
-        if (getConfiguration().getString("language").equalsIgnoreCase("de")) {
-            return true;
-        } else
-            return false;
+        return getConfiguration().getString("language").equalsIgnoreCase("de");
     }
     private static Boolean english () {
-        if (getConfiguration().getString("language").equalsIgnoreCase("eng")) {
-            return true;
-        } else
-            return false;
+        return getConfiguration().getString("language").equalsIgnoreCase("eng");
     }
-    @NotNull
+
     public static String cmdArgError(String label) {
         if (german()) {
             return Utility.getPrefix() + "§7Mache §e" + label + " §7 oder §e/" + label + " [NAME]§7!";
@@ -44,7 +37,7 @@ public class VariableManager {
         }
         return "[Simple-Vanish] Config Languages ERROR";
     }
-    @NotNull
+
     public static String nowNoLonerVanish() {
         if (german()) {
             return Utility.getPrefix() + "§7Du bist nun§c nicht mehr§7 Vanish.";
@@ -54,7 +47,7 @@ public class VariableManager {
         }
         return "[Simple-Vanish] Config Languages ERROR";
     }
-    @NotNull
+
     public static String permsError(String permsThatAreRequired) {
         if (german()) {
             return Utility.getPrefix() + "§7Dazu hast du keine Rechte, dir fehlt§e " + permsThatAreRequired;
@@ -64,7 +57,7 @@ public class VariableManager {
         }
         return "[Simple-Vanish] Config Languages ERROR";
     }
-    @NotNull
+
     public static String nowInVanish() {
         if (german()) {
             return Utility.getPrefix() + "§7Du bist nun §a im §7 Vanish.";
@@ -75,7 +68,7 @@ public class VariableManager {
         return "[Simple-Vanish] Config Languages ERROR";
     }
 
-    @NotNull
+
     public static String playerNotOnline(String player) {
         if (german()) {
             return Utility.getPrefix() + "§cDer Spieler §e" + player +  "§c ist nicht online.";
@@ -86,7 +79,7 @@ public class VariableManager {
         return "[Simple-Vanish] Config Languages ERROR";
     }
 
-    @NotNull
+
     public static String unVanishOthers(Player t) {
         if (german()) {
             return Utility.getPrefix() + "§e" + t.getName() + "§7 ist nun§c nicht mehr§7 im Vanish.";
@@ -97,7 +90,7 @@ public class VariableManager {
         return "[Simple-Vanish] Config Languages ERROR";
     }
 
-    @NotNull
+
     public static String vanishOthers(Player t) {
         if (german()) {
             return Utility.getPrefix() + "§e" + t.getName() + "§7 ist nun§a im§7 Vanish.";

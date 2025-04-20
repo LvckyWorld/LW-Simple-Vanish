@@ -4,7 +4,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
-import java.util.UUID;
 
 /**
  * © 2016-2021 LvckyWorld Infastructure Systems
@@ -32,12 +31,8 @@ public class VanishManager {
             Bukkit.getOnlinePlayers().forEach(all -> all.showPlayer(p));
         }
     }
-    public static Boolean isVanished(Player p) {
-        if (vanishedPlayers.contains(p.getName())) {
-            return true;
-        } else {
-            return false;
-        }
+    public static boolean isVanished(Player p) {
+        return vanishedPlayers.contains(p.getName());
     }
     public static String getVanishedPlayer(Player p) {
         if (vanishedPlayers.isEmpty()) {
